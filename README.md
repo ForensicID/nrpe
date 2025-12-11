@@ -1,5 +1,8 @@
-# nrpe-plugin
-NRPE berfungsi sebagai jembatan antara server Nagios dan mesin klien yang ingin dipantau. Ketika Nagios mengirim permintaan untuk memeriksa status atau kinerja layanan di server klien, NRPE menerima permintaan tersebut, menjalankan plugin yang sesuai di mesin klien, dan mengembalikan hasilnya ke server Nagios.
+# 🔍 NRPE Custom Plugins
+
+Kumpulan *custom script* (plugin) untuk **NRPE (Nagios Remote Plugin Executor)**. Script ini digunakan untuk memonitor metrik spesifik pada server klien yang kemudian datanya dikirim ke server monitoring utama (Nagios/Icinga2/Zabbix).
+
+---
 ## RAM
 
 ```bash
@@ -40,3 +43,15 @@ command[check_netstat]=/usr/local/nagios/libexec/check_bandwidth 100 500 100 500
 command[check_cpusage]=/usr/local/nagios/libexec/check_cpusage.sh -w 80 -c 90
 command[check_database]=/usr/local/nagios/libexec/check_mysql_query.pl -H 127.0.0.1 -u username -p password
 ```
+---
+
+## 🛠️ Requirements
+
+* **OS:** Linux (Debian/Ubuntu/CentOS).
+* **Package:** `nagios-nrpe-server`, `nagios-plugins`.
+* **Dependencies:** Beberapa script mungkin membutuhkan paket tambahan seperti `bc`, `jq`, atau `sysstat` (pastikan cek header script masing-masing).
+
+---
+
+## 🤝 Kontribusi
+Jika Anda memiliki ide script monitoring baru, silakan buat *Pull Request* atau taruh di folder kategori yang sesuai.
